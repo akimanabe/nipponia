@@ -12,7 +12,7 @@ ad2jy(adyear, use_old_name = TRUE)
 \item{use_old_name}{TRUE for 2019 = H31, FALSE for 2019 = R1}
 }
 \value{
-
+japanese year in alphabetical name
 }
 \description{
 Convert AD to Japanese year

@@ -3,7 +3,7 @@
 #' @param adyear vector of AD year
 #' @param use_old_name TRUE for 2019 = H31, FALSE for 2019 = R1
 #'
-#' @return
+#' @return japanese year in alphabetical name
 #' @export
 #'
 #' @examples
