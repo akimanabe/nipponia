@@ -7,9 +7,10 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' sample_year <- seq(1926, 2020,by = 1)
 #' ad2jy(adyear = sample_year, use_old_name = TRUE)
-#'
+#' }
 
 ad2jy <- function(adyear, use_old_name = TRUE) {
   assertthat::assert_that(
