@@ -17,8 +17,11 @@ Imports:
     assertthat,
     dplyr,
     magrittr,
+    readr,
     stringi,
-    stringr
+    stringr,
+    tibble,
+    utils
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
