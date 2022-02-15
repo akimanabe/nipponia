@@ -4,23 +4,25 @@
 #'
 #' @return Anglicized Japanese prefecture names
 #' @export
-#'
-#' @examples
 #' \dontrun{
+#' prefoo <- c("千葉", "神奈川")
+#' trans_prefec_eng(prefoo)
+#' preftbl <- tibble::tibble(prefecs = prefoo)
+#' preftbl %>% dplyr::mutate(prefecs = trans_prefec_eng(prefecs))
 #' }
 trans_prefec_eng <- function(dat) {
-  if (class(dat) %in% c("character", "factor")) {
-    res <-
-      tibble::tibble(JPrefec = dat) %>%
-      dplyr::mutate(JPrefec = trans_prefec_eng(JPrefec)) %>%
-      dplyr::pull(JPrefec)
-  }
+    if (class(dat) %in% c("character", "factor")) {
+      res <-
+        tibble::tibble(JPrefec = dat) %>%
+        dplyr::mutate(JPrefec = prefec_jp2en(JPrefec)) %>%
+        dplyr::pull(JPrefec)
+    }
 
-  if (class(dat) %in% c("tbl_df", "tbl", "data.frame")) {
-    res <-
-      dplyr::mutate(dat = trans_prefec_eng(dat)) %>%
-      dplyr::pull(dat)
-  }
+    if (class(dat) %in% c("tbl_df", "tbl", "data.frame")) {
+      res <-
+        dplyr::mutate(dat = prefec_jp2en(dat)) %>%
+        dplyr::pull(dat)
+    }
   return(res)
 }
 
@@ -30,10 +32,6 @@ trans_prefec_eng <- function(dat) {
 #'
 #' @return `tibble` Anglicized prefecture names
 #' @export
-#'
-#' @examples
-#' \dontrun{
-#' }
 prefec_jp2en <- function(dat) {
   dplyr::recode(dat,
                 "北海道" = "Hokkaido",
@@ -90,12 +88,9 @@ prefec_jp2en <- function(dat) {
 #' Factorize Japanese prefectures
 #'
 #' @param prefec vector of Japanese prefectures
-#' @param lang
 #'
-#' @return
+#' @return factored vector
 #' @export
-#'
-#' @examples
 factor_prefec <- function(prefec) {
     factor(prefec, levels = c(
       "北海道", "青森", "岩手", "宮城", "秋田", "山形", "福島", "茨城", "栃木",
