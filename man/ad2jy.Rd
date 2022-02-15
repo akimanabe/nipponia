@@ -18,7 +18,8 @@ japanese year in alphabetical name
 Convert AD to Japanese year
 }
 \examples{
+\dontrun{
 sample_year <- seq(1926, 2020,by = 1)
 ad2jy(adyear = sample_year, use_old_name = TRUE)
-
+}
 }
