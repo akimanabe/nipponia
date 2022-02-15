@@ -10,7 +10,9 @@ test_that("function converts prefec names from JP to EN", {
     "Chiba")
 
   expect_equal(
-    tibble::tibble(foo = c("\u5343\u8449", "\u795e\u5948\u5ddd")) %>% # Chiba and Kanagawa
+    tibble::tibble(foo =
+                     c("\u5343\u8449",
+                       "\u795e\u5948\u5ddd")) %>% # Chiba and Kanagawa
       dplyr::mutate(foo = prefec_jp2en(foo)) %>%
       dplyr::pull(foo),
     c("Chiba", "Kanagawa"))
@@ -26,7 +28,8 @@ test_that("function converts vector and tibble into English prefecs", {
     "Chiba")
 
   expect_equal(
-    trans_prefec_eng(c("\u795e\u5948\u5ddd", "\u5343\u8449")), # Kanagawa and Chiba
+    trans_prefec_eng(c("\u795e\u5948\u5ddd",
+                       "\u5343\u8449")), # Kanagawa and Chiba
     c("Kanagawa", "Chiba")
   )
 
@@ -37,7 +40,8 @@ test_that("function converts vector and tibble into English prefecs", {
     "Chiba")
 
   expect_equal(
-    tibble::tibble(foo = c("\u5343\u8449", "\u795e\u5948\u5ddd")) %>% # Chiba and Kanagawa
+    tibble::tibble(foo = c("\u5343\u8449",
+                           "\u795e\u5948\u5ddd")) %>% # Chiba and Kanagawa
       dplyr::mutate(foo = trans_prefec_eng(foo)) %>%
       dplyr::pull(foo),
     c("Chiba", "Kanagawa"))
