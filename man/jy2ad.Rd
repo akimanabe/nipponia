@@ -19,21 +19,23 @@ Convert Japanese year to AD
 \dontrun{
 single_alphabet <- c(paste0("S", seq(59, 63)), paste0("H", seq(1, 11)))
 
-kanji <- c(paste0("昭和", seq(59, 63)), paste0("平成", seq(1, 11)))
+kanji <- c(paste0("\u662d\u548c", seq(59, 63)),
+ paste0("\u5e73\u6210", seq(1, 11))) # showa and heisei
 
-single_kanji <- c(paste0("昭 ", seq(59, 63)), paste0("平 ", seq(1, 11)))
+single_kanji <- c(paste0("\u662d", seq(59, 63)),
+ paste0("\u5e73", seq(1, 11))) # sho and hei
 
 zen_single_alphabet <- c(
-paste0("Ｓ", c("５９", "６０", "６１", "６２", "６３")),
-paste0("Ｈ", seq(1, 11)))
+paste0("\uff33", c("５９", "６０", "６１", "６２", "６３")), # zenkaku S
+paste0("\uff28", seq(1, 11))) # zenkaku H
 
 zen_kanji <- c(
-paste0("昭和", c("５９", "６０", "６１", "６２", "６３")),
-paste0("平成", seq(1, 11)))
+paste0("\u662d\u548c", c("５９", "６０", "６１", "６２", "６３")),
+paste0("\u5e73\u6210", seq(1, 11)))
 
 zen_single_kanji <- c(
-paste0("昭", c("５９", "６０", "６１", "６２", "６３")),
-paste0("平", seq(1, 11)))
+paste0("\u662d", c("５９", "６０", "６１", "６２", "６３")),
+paste0("\u5e73", seq(1, 11)))
 
 jy2ad(single_alphabet)
 jy2ad(kanji)

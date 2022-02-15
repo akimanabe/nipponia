@@ -8,7 +8,8 @@ test_that("function can save Japanese csv", {
   dat <- tibble::tibble(a = a, b = b)
   write_csvj(dat = dat, filename = "test.csv")
     expect_equal(
-      readr::read_csv("test.csv", locale=readr::locale(encoding="CP932")) %>%
+      readr::read_csv("test.csv",
+                      locale = readr::locale(encoding = "CP932")) %>%
         dplyr::pull(a),
       a)
 })

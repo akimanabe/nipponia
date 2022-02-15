@@ -8,9 +8,11 @@
 #' \dontrun{
 #' single_alphabet <- c(paste0("S", seq(59, 63)), paste0("H", seq(1, 11)))
 #'
-#' kanji <- c(paste0("\u662d\u548c", seq(59, 63)), paste0("\u5e73\u6210", seq(1, 11))) # showa and heisei
+#' kanji <- c(paste0("\u662d\u548c", seq(59, 63)),
+#'  paste0("\u5e73\u6210", seq(1, 11))) # showa and heisei
 #'
-#' single_kanji <- c(paste0("\u662d", seq(59, 63)), paste0("\u5e73", seq(1, 11))) # sho and hei
+#' single_kanji <- c(paste0("\u662d", seq(59, 63)),
+#'  paste0("\u5e73", seq(1, 11))) # sho and hei
 #'
 #' zen_single_alphabet <- c(
 #' paste0("\uff33", c("５９", "６０", "６１", "６２", "６３")), # zenkaku S
