@@ -3,6 +3,7 @@
 export("%>%")
 export(ad2jy)
 export(factor_prefec)
+export(halfkakko)
 export(jy2ad)
 export(prefec_jp2en)
 export(write_csvj)
